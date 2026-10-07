@@ -77,8 +77,9 @@
   * `/contabilidade-douradina-pr`
   * `/contabilidade-itapema-sc`
   * `/areas-de-atendimento`
-* **Artigos Educativos (E-E-A-T):**
+* **Artigos Educativos (E-E-A-T) & Iscas de Conversão Local:**
   * `/conteudos`
+  * `/conteudos/como-abrir-empresa-em-umuarama-passo-a-passo` (SEO Local Umuarama)
   * `/conteudos/quando-migrar-do-simples-para-o-lucro-presumido`
   * `/conteudos/holding-familiar-o-que-considerar-antes-de-constituir`
   * `/conteudos/recuperacao-de-creditos-como-funciona-na-pratica`
