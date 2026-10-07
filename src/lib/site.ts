@@ -517,6 +517,50 @@ export const articleCategories = [
 
 export const articles: Article[] = [
   {
+    slug: "como-abrir-empresa-em-umuarama-passo-a-passo",
+    title: "Como abrir empresa em Umuarama – PR: Passo a passo, Junta Comercial e Alvará",
+    category: "Gestão Empresarial",
+    excerpt:
+      "Guia prático para novos negócios: consulta prévia na Prefeitura de Umuarama, registro na Jucepar, escolha do regime tributário e suporte contábil presencial.",
+    readingTime: "6 min de leitura",
+    date: "2026-10-07",
+    dateLabel: "7 de outubro de 2026",
+    body: [
+      {
+        paragraphs: [
+          "Abrir uma empresa em Umuarama exige mais do que apenas emitir um número de CNPJ. O processo envolve alinhamento entre o zoneamento municipal, a Junta Comercial do Paraná (Jucepar) e uma estratégia contábil e tributária que impeça o negócio de pagar impostos indevidos desde o primeiro mês.",
+        ],
+      },
+      {
+        heading: "1. Consulta prévia de viabilidade na Prefeitura de Umuarama",
+        paragraphs: [
+          "O primeiro passo técnico é protocolar a consulta de viabilidade de endereço e atividade. O plano diretor e a legislação de zoneamento urbano de Umuarama determinam se o ponto pretendido comporta a atividade comercial ou industrial desejada.",
+          "Nessa etapa, também são analisadas as exigências do Corpo de Bombeiros (taxas e vistorias) e da Vigilância Sanitária municipal para emissão ágil do Alvará de Funcionamento.",
+        ],
+      },
+      {
+        heading: "2. Registro societário e contrato social na Jucepar",
+        paragraphs: [
+          "Com a viabilidade aprovada, elabora-se o Contrato Social e o registro perante a Jucepar (Junta Comercial do Paraná). A definição do tipo societário — como Sociedade Limitada Unipessoal (SLU) ou Sociedade Limitada pluripessoal — é crucial para proteger o patrimônio pessoal dos sócios.",
+          "Cada cláusula define pro-labore, regras de entrada e saída de sócios, garantindo estabilidade jurídica à sociedade.",
+        ],
+      },
+      {
+        heading: "3. Enquadramento tributário: Não comece no regime errado",
+        paragraphs: [
+          "Muitos empreendedores acreditam que o Simples Nacional é sempre a alternativa mais barata. No entanto, dependendo da folha de pagamento, do Fator R e da incidência de tributação monofásica ou substituição tributária, o Lucro Presumido pode ser consideravelmente mais vantajoso.",
+          "Uma simulação prévia da Bandoch Alves antes do enquadramento inicial evita recolhimentos desnecessários ao longo de todo o ano-calendário.",
+        ],
+      },
+      {
+        heading: "4. Suporte contábil presencial em Umuarama",
+        paragraphs: [
+          "O escritório Bandoch Alves fica localizado na Av. Ângelo Moreira da Fonseca, 4566 (Zona I-A) em Umuarama. A equipe da contadora responsável Simone Bandoch Alves conduz todo o trâmite: desde a viabilidade municipal até a emissão da primeira nota fiscal, com acompanhamento direto e reuniões presenciais.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "quando-migrar-do-simples-para-o-lucro-presumido",
     title: "Quando migrar do Simples Nacional para o Lucro Presumido",
     category: "Tributário",

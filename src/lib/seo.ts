@@ -54,12 +54,21 @@ export const organizationSchema = {
   name: site.legalName,
   alternateName: site.name,
   description:
-    "Escritório contábil em Umuarama – PR especializado em contabilidade consultiva, planejamento tributário, recuperação de créditos, holding patrimonial e estruturação societária.",
+    "Escritório de contabilidade em Umuarama – PR especializado em contabilidade consultiva, abertura de empresas, planejamento tributário, recuperação de créditos e holding patrimonial.",
   url: SITE_URL,
   telephone: "+55 44 3624-4599",
   email: site.email,
   taxID: site.cnpj,
   address: postalAddress,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -23.7661,
+    longitude: -53.3206,
+  },
+  hasMap: "https://maps.google.com/?q=Av.+%C3%82ngelo+Moreira+da+Fonseca,+4566,+Umuarama+-+PR",
+  priceRange: "$$",
+  currenciesAccepted: "BRL",
+  paymentAccepted: "Cash, Credit Card, Pix, Bank Transfer",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -75,12 +84,22 @@ export const organizationSchema = {
     },
   ],
   areaServed: [
-    { "@type": "City", name: "Umuarama" },
+    { "@type": "City", name: "Umuarama", sameAs: "https://pt.wikipedia.org/wiki/Umuarama" },
     { "@type": "City", name: "Campo Mourão" },
     { "@type": "City", name: "Goioerê" },
     { "@type": "City", name: "Douradina" },
     { "@type": "City", name: "Itapema" },
+    { "@type": "AdministrativeArea", name: "Paraná" },
     { "@type": "Country", name: "Brasil" },
+  ],
+  knowsAbout: [
+    "Contabilidade em Umuarama",
+    "Escritório de Contabilidade",
+    "Abertura de Empresas e Legalização Societária",
+    "Planejamento Tributário e Elisão Fiscal",
+    "Recuperação de Créditos Tributários",
+    "Holding Patrimonial e Proteção de Bens",
+    "Gestão Fiscal e Folha de Pagamento"
   ],
   sameAs: [site.instagram],
   founder: {
@@ -92,6 +111,7 @@ export const organizationSchema = {
 };
 
 export function localBusinessSchema(city: string, state: string, path: string) {
+  const isUmuarama = city.toLowerCase() === "umuarama";
   return {
     "@context": "https://schema.org",
     "@type": ["AccountingService", "LocalBusiness"],
@@ -100,6 +120,17 @@ export function localBusinessSchema(city: string, state: string, path: string) {
     telephone: "+55 44 3624-4599",
     email: site.email,
     address: postalAddress,
+    ...(isUmuarama
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: -23.7661,
+            longitude: -53.3206,
+          },
+          hasMap: "https://maps.google.com/?q=Av.+%C3%82ngelo+Moreira+da+Fonseca,+4566,+Umuarama+-+PR",
+          priceRange: "$$",
+        }
+      : {}),
     areaServed: { "@type": "City", name: city },
     sameAs: [site.instagram],
   };

@@ -31,17 +31,17 @@ function Home() {
         <div className="grid lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-[1.08fr_0.92fr] lg:grid-rows-[1fr_auto]">
           <div className="order-2 flex items-center px-5 py-14 sm:px-8 sm:py-20 lg:order-1 lg:pl-[max(2rem,calc((100vw-72rem)/2))] lg:pr-12">
             <div className="max-w-[42rem]">
-              <Eyebrow>Contabilidade e estratégia tributária · Umuarama–PR</Eyebrow>
+              <Eyebrow>Escritório de Contabilidade · Sede em Umuarama–PR</Eyebrow>
               <h1 className="mt-6 text-4xl leading-[1.04] sm:text-5xl lg:text-[3.55rem]">
                 Decisões tributárias inteligentes constroem empresas mais fortes.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Contabilidade consultiva para empresários que desejam reduzir riscos, identificar
+                Contabilidade consultiva e empresarial em <strong>Umuarama e todo o Brasil</strong> para empresários que desejam reduzir riscos, identificar
                 oportunidades tributárias e proteger seu patrimônio com segurança e estratégia.
               </p>
 
               <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-3" aria-label="Principais especialidades">
-                {["Recuperação tributária", "Planejamento tributário", "Holdings e proteção patrimonial"].map(
+                {["Contabilidade em Umuarama", "Recuperação tributária", "Planejamento tributário", "Holdings e proteção patrimonial"].map(
                   (item) => (
                     <li key={item} className="flex items-center gap-2 text-[0.7rem] font-semibold tracking-[0.1em] text-graphite uppercase">
                       <span className="h-1.5 w-1.5 shrink-0 bg-wine" aria-hidden="true" />
@@ -54,20 +54,20 @@ function Home() {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <ButtonLink
                   href={whatsappLink(
-                    "Olá, conheci a Bandoch Alves pelo site e gostaria de conversar sobre uma análise tributária para minha empresa.",
+                    "Olá, conheci a Bandoch Alves pelo site e gostaria de conversar sobre uma análise tributária para minha empresa em Umuarama.",
                   )}
                   external
                   className="w-full sm:w-auto"
                 >
                   Falar com uma especialista
                 </ButtonLink>
-                <ButtonLink to="/solucoes" variant="outline" className="w-full sm:w-auto">
-                  Conhecer nossas soluções
+                <ButtonLink to="/contabilidade-umuarama-pr" variant="outline" className="w-full sm:w-auto">
+                  Atendimento em Umuarama
                 </ButtonLink>
               </div>
 
               <p className="mt-8 border-l-2 border-wine pl-4 text-sm leading-relaxed text-graphite/75">
-                Atendimento conduzido diretamente pela responsável técnica, {site.responsible} · {site.crcResponsible}.
+                Atendimento presencial na sede em Umuarama ({site.address.street}) e conduzido diretamente pela responsável técnica, {site.responsible} · {site.crcResponsible}.
               </p>
             </div>
           </div>
