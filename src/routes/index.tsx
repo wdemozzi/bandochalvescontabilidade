@@ -4,6 +4,7 @@ import { CarouselRow } from "@/components/ui/carousel-row";
 import { BAMark } from "@/components/brand/Logo";
 import { ContactFacts, FinalCta, SolutionsGrid, StepsSection } from "@/components/sections/common";
 import { Faq } from "@/components/sections/Faq";
+import { CasesSection } from "@/components/sections/CasesSection";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { InstagramSection } from "@/components/sections/InstagramSection";
 import { articles, cities, faq, segments, site, whatsappLink } from "@/lib/site";
@@ -13,9 +14,9 @@ const teamPortrait = "/images/simone-equipe.webp";
 export const Route = createFileRoute("/")({
   head: () =>
     meta({
-      title: "Bandoch Alves Escritório Contábil | Contabilidade Consultiva em Umuarama – PR",
+      title: "Contabilidade em Umuarama – PR | Bandoch Alves Escritório Contábil",
       description:
-        "Contabilidade consultiva, planejamento tributário, recuperação de créditos, holding patrimonial e estruturação societária para empresas e famílias empresárias. Umuarama – PR e atendimento nacional.",
+        "Contabilidade em Umuarama – PR: assessoria consultiva, planejamento tributário, recuperação de créditos, holding patrimonial e estruturação societária para empresas. Atendimento presencial e nacional.",
       path: "/",
     }),
   component: Home,
@@ -31,9 +32,9 @@ function Home() {
         <div className="grid lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-[1.08fr_0.92fr] lg:grid-rows-[1fr_auto]">
           <div className="order-2 flex items-center px-5 py-14 sm:px-8 sm:py-20 lg:order-1 lg:pl-[max(2rem,calc((100vw-72rem)/2))] lg:pr-12">
             <div className="max-w-[42rem]">
-              <Eyebrow>Escritório de Contabilidade · Sede em Umuarama–PR</Eyebrow>
+              <Eyebrow>Escritório de Contabilidade em Umuarama – PR</Eyebrow>
               <h1 className="mt-6 text-4xl leading-[1.04] sm:text-5xl lg:text-[3.55rem]">
-                Decisões tributárias inteligentes constroem empresas mais fortes.
+                Contabilidade em Umuarama: Decisões tributárias inteligentes constroem empresas mais fortes.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Contabilidade consultiva e empresarial em <strong>Umuarama e todo o Brasil</strong> para empresários que desejam reduzir riscos, identificar
@@ -256,6 +257,9 @@ function Home() {
           </div>
         </Container>
       </Section>
+
+      {/* Avaliações reais & Cases */}
+      <CasesSection />
 
       {/* FAQ */}
       <Section>

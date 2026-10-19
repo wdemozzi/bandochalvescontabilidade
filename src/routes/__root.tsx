@@ -94,8 +94,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Bandoch Alves Escritório Contábil" },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
+      
+      /* OpenGraph & Compartilhamento WhatsApp */
       { property: "og:image", content: "https://www.bandochalvescontabilidade.com.br/og-image.jpg" },
+      { property: "og:image:secure_url", content: "https://www.bandochalvescontabilidade.com.br/og-image.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Bandoch Alves Escritório Contábil em Umuarama – PR" },
       { name: "twitter:image", content: "https://www.bandochalvescontabilidade.com.br/og-image.jpg" },
+
+      /* Georreferenciamento Local SEO (Umuarama - Noroeste do PR) */
+      { name: "geo.region", content: "BR-PR" },
+      { name: "geo.placename", content: "Umuarama, Paraná, Brasil" },
+      { name: "geo.position", content: "-23.7661;-53.3206" },
+      { name: "ICBM", content: "-23.7661, -53.3206" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -116,6 +129,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         type: "application/ld+json",
         children: JSON.stringify(organizationSchema),
+      },
+      /* Google Analytics (GA4) - Base Tag */
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-B7Y0278Q9X",
+        async: true,
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-B7Y0278Q9X');
+        `,
       },
     ],
   }),

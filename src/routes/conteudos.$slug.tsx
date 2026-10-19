@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Container, JsonLd, Section } from "@/components/ui/primitives";
 import { FinalCta } from "@/components/sections/common";
+import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { articleBySlug, articles, site } from "@/lib/site";
 import { meta } from "@/lib/seo";
 
@@ -48,7 +49,14 @@ function ArticlePage() {
         <header className="border-b border-border bg-beige">
           <Container className="py-16 sm:py-20">
             <div className="max-w-3xl">
-              <p className="eyebrow text-wine">{a.category}</p>
+              <BreadcrumbNav
+                items={[
+                  { label: "Conteúdos", href: "/conteudos" },
+                  { label: a.category, href: "/conteudos" },
+                  { label: a.title },
+                ]}
+              />
+              <p className="eyebrow text-wine mt-4">{a.category}</p>
               <h1 className="mt-5 text-3xl leading-[1.14] sm:text-[2.75rem]">{a.title}</h1>
               <p className="mt-6 text-base leading-relaxed text-graphite/75 sm:text-lg">
                 {a.excerpt}

@@ -2,6 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Container, JsonLd, Section, SectionHeading } from "@/components/ui/primitives";
 import { FinalCta, PageHero, SolutionsGrid } from "@/components/sections/common";
 import { ButtonLink } from "@/components/ui/primitives";
+import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { solutions, whatsappLink } from "@/lib/site";
 import { meta, serviceSchema } from "@/lib/seo";
 
@@ -32,7 +33,7 @@ function SolutionPage() {
     <>
       <JsonLd data={serviceSchema(s.title, s.summary, s.path)} />
 
-      <PageHero eyebrow="Solução" title={s.title} intro={s.summary}>
+      <PageHero eyebrow="Solução Especializada" title={s.title} intro={s.summary}>
         <ButtonLink
           href={whatsappLink(`Olá! Tenho interesse em ${s.title}. Podemos conversar?`)}
           external
@@ -46,7 +47,14 @@ function SolutionPage() {
 
       <Section tone="white">
         <Container>
-          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          <BreadcrumbNav
+            items={[
+              { label: "Soluções", href: "/solucoes" },
+              { label: s.title },
+            ]}
+          />
+
+          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] mt-6">
             <div>
               <SectionHeading eyebrow="Contexto" title="Por que este trabalho existe" />
               <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground">

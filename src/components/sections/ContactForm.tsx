@@ -59,6 +59,9 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
 
     setSent(true);
     window.open(whatsappLink(text), "_blank", "noopener,noreferrer");
+    setTimeout(() => {
+      window.location.href = "/obrigado";
+    }, 500);
   }
 
   return (
@@ -138,21 +141,27 @@ export function ContactForm({ tone = "light" }: { tone?: "light" | "dark" }) {
         {errors.consent && <p className="mt-2 text-xs text-destructive">{errors.consent}</p>}
       </div>
 
-      <button
-        type="submit"
-        className={`inline-flex items-center justify-center px-8 py-3.5 text-[0.78rem] font-semibold tracking-[0.14em] uppercase transition-colors ${
-          tone === "dark"
-            ? "bg-offwhite text-wine hover:bg-champagne hover:text-ink"
-            : "bg-wine text-offwhite hover:bg-wine-deep"
-        }`}
-      >
-        Enviar mensagem
-      </button>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+        <button
+          type="submit"
+          className={`inline-flex items-center justify-center px-8 py-3.5 text-[0.78rem] font-semibold tracking-[0.14em] uppercase transition-colors ${
+            tone === "dark"
+              ? "bg-offwhite text-wine hover:bg-champagne hover:text-ink"
+              : "bg-wine text-offwhite hover:bg-wine-deep"
+          }`}
+        >
+          Enviar mensagem
+        </button>
+
+        <div className={`flex items-center gap-2 text-xs ${tone === "dark" ? "text-offwhite/80" : "text-muted-foreground"}`}>
+          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+          <span><strong>Promessa de Resposta:</strong> Retorno em até 30 min em horário comercial.</span>
+        </div>
+      </div>
 
       {sent && (
         <p className={`text-sm ${tone === "dark" ? "text-champagne" : "text-wine"}`}>
-          Abrimos o WhatsApp com sua mensagem pronta. Se a janela não abrir, fale conosco pelo
-          telefone ou e-mail ao lado.
+          Mensagem processada! Redirecionando para a confirmação...
         </p>
       )}
     </form>

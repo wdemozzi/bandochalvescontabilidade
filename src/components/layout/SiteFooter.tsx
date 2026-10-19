@@ -112,8 +112,11 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {site.legalName}. Todos os direitos reservados.
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <Link to="/politica-de-privacidade" className="hover:text-champagne">
+            <Link to="/politica-de-privacidade" className="hover:text-champagne transition-colors">
               Política de Privacidade (LGPD)
+            </Link>
+            <Link to="/termos-de-uso" className="hover:text-champagne transition-colors">
+              Termos de Uso
             </Link>
             <a
               href="https://wa.me/5544997357463"

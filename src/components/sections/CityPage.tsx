@@ -1,5 +1,6 @@
 import { Container, JsonLd, Section, SectionHeading, ButtonLink } from "@/components/ui/primitives";
 import { ContactFacts, FinalCta, PageHero, SolutionsGrid } from "@/components/sections/common";
+import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { localBusinessSchema } from "@/lib/seo";
 import { site, whatsappLink, type City } from "@/lib/site";
 
@@ -28,7 +29,14 @@ export function CityPage({ city }: { city: City }) {
 
       <Section tone="white">
         <Container>
-          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          <BreadcrumbNav
+            items={[
+              { label: "Áreas de Atendimento", href: "/areas-de-atendimento" },
+              { label: `Contabilidade em ${city.city} – ${city.state}` },
+            ]}
+          />
+
+          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] mt-6">
             <div>
               <SectionHeading eyebrow="Contexto local" title={`Como atendemos ${city.city}`} />
               <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground">

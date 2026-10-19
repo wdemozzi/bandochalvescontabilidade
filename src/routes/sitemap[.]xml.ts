@@ -29,6 +29,7 @@ const routes: { path: string; priority: string }[] = [
   { path: "/conteudos/pro-labore-e-distribuicao-de-lucros-como-definir", priority: "0.6" },
   { path: "/contato", priority: "0.9" },
   { path: "/politica-de-privacidade", priority: "0.3" },
+  { path: "/termos-de-uso", priority: "0.3" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
@@ -38,7 +39,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls = routes
           .map(
             (r) =>
-              `  <url><loc>${SITE_URL}${r.path}</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>${r.priority}</priority></url>`,
+              `  <url><loc>${SITE_URL}${r.path}</loc><lastmod>2026-10-19</lastmod><changefreq>weekly</changefreq><priority>${r.priority}</priority></url>`,
           )
           .join("\n");
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;

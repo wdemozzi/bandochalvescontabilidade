@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ButtonLink, Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { ContactFacts, PageHero } from "@/components/sections/common";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
 import { site, whatsappLink } from "@/lib/site";
 import { meta } from "@/lib/seo";
 
@@ -41,27 +42,47 @@ function Contato() {
 
       <Section tone="white">
         <Container>
-          <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+          <BreadcrumbNav items={[{ label: "Contato" }]} />
+
+          <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] mt-4">
             <div>
               <SectionHeading
-                eyebrow="Formulário"
+                eyebrow="Formulário de Atendimento"
                 title="Conte o momento da sua empresa"
-                intro="Preencha os campos abaixo. Ao enviar, sua mensagem é preparada no WhatsApp do escritório."
+                intro="Preencha os campos abaixo para um retorno consultivo. Garantimos sigilo e retorno rápido."
               />
-              <div className="mt-10">
+              <div className="mt-8">
                 <ContactForm />
               </div>
             </div>
             <div>
               <ContactFacts />
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-block text-[0.72rem] font-semibold tracking-[0.14em] text-wine uppercase"
-              >
-                Abrir no Google Maps →
-              </a>
+              
+              {/* Botões de rotas e GPS */}
+              <div className="mt-8 rounded-2xl border border-border bg-beige/60 p-6">
+                <h3 className="eyebrow text-wine">Rotas & Como Chegar</h3>
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                  Sede com estacionamento próprio na {site.address.street}, {site.address.city} – {site.address.state}.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2.5">
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-wine px-4 py-2 text-xs font-semibold uppercase tracking-wider text-offwhite transition-colors hover:bg-wine-deep"
+                  >
+                    <span>Rota Google Maps</span>
+                  </a>
+                  <a
+                    href={`https://waze.com/ul?q=${mapQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold uppercase tracking-wider text-graphite transition-colors hover:bg-beige"
+                  >
+                    <span>Navegar no Waze</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </Container>

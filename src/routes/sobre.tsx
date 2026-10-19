@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { PageHero, FinalCta, StepsSection, ContactFacts } from "@/components/sections/common";
+import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
+import { CasesSection } from "@/components/sections/CasesSection";
 import { BAMark } from "@/components/brand/Logo";
 import { site } from "@/lib/site";
 import { meta } from "@/lib/seo";
@@ -54,7 +56,9 @@ function Sobre() {
 
       <Section tone="white">
         <Container>
-          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          <BreadcrumbNav items={[{ label: "Sobre o Escritório" }]} />
+
+          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] mt-6">
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
               <SectionHeading
                 eyebrow="Quem somos"
@@ -138,6 +142,8 @@ function Sobre() {
           </div>
         </Container>
       </Section>
+
+      <CasesSection />
 
       <FinalCta />
     </>

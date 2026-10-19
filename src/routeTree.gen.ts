@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as R404RouteImport } from './routes/404'
 import { Route as AreasDeAtendimentoRouteImport } from './routes/areas-de-atendimento'
 import { Route as ContabilidadeCampoMouraoPrRouteImport } from './routes/contabilidade-campo-mourao-pr'
 import { Route as ContabilidadeDouradinaPrRouteImport } from './routes/contabilidade-douradina-pr'
@@ -18,11 +19,13 @@ import { Route as ContabilidadeGoioerePrRouteImport } from './routes/contabilida
 import { Route as ContabilidadeItapemaScRouteImport } from './routes/contabilidade-itapema-sc'
 import { Route as ContabilidadeUmuaramaPrRouteImport } from './routes/contabilidade-umuarama-pr'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as ObrigadoRouteImport } from './routes/obrigado'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SegmentosRouteImport } from './routes/segmentos'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 import { Route as ConteudosIndexRouteImport } from './routes/conteudos.index'
 import { Route as ConteudosSlugRouteImport } from './routes/conteudos.$slug'
 import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
@@ -31,6 +34,11 @@ import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R404Route = R404RouteImport.update({
+  id: '/404',
+  path: '/404',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AreasDeAtendimentoRoute = AreasDeAtendimentoRouteImport.update({
@@ -76,6 +84,11 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObrigadoRoute = ObrigadoRouteImport.update({
+  id: '/obrigado',
+  path: '/obrigado',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   id: '/politica-de-privacidade',
   path: '/politica-de-privacidade',
@@ -101,6 +114,11 @@ const SobreRoute = SobreRouteImport.update({
   path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConteudosIndexRoute = ConteudosIndexRouteImport.update({
   id: '/conteudos/',
   path: '/conteudos/',
@@ -124,6 +142,7 @@ const SolucoesSlugRoute = SolucoesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/areas-de-atendimento': typeof AreasDeAtendimentoRoute
   '/contabilidade-campo-mourao-pr': typeof ContabilidadeCampoMouraoPrRoute
   '/contabilidade-douradina-pr': typeof ContabilidadeDouradinaPrRoute
@@ -132,11 +151,13 @@ export interface FileRoutesByFullPath {
   '/contabilidade-itapema-sc': typeof ContabilidadeItapemaScRoute
   '/contabilidade-umuarama-pr': typeof ContabilidadeUmuaramaPrRoute
   '/contato': typeof ContatoRoute
+  '/obrigado': typeof ObrigadoRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/segmentos': typeof SegmentosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/conteudos/$slug': typeof ConteudosSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/conteudos/': typeof ConteudosIndexRoute
@@ -144,6 +165,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/areas-de-atendimento': typeof AreasDeAtendimentoRoute
   '/contabilidade-campo-mourao-pr': typeof ContabilidadeCampoMouraoPrRoute
   '/contabilidade-douradina-pr': typeof ContabilidadeDouradinaPrRoute
@@ -152,11 +174,13 @@ export interface FileRoutesByTo {
   '/contabilidade-itapema-sc': typeof ContabilidadeItapemaScRoute
   '/contabilidade-umuarama-pr': typeof ContabilidadeUmuaramaPrRoute
   '/contato': typeof ContatoRoute
+  '/obrigado': typeof ObrigadoRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/segmentos': typeof SegmentosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/conteudos/$slug': typeof ConteudosSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/conteudos': typeof ConteudosIndexRoute
@@ -165,6 +189,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/areas-de-atendimento': typeof AreasDeAtendimentoRoute
   '/contabilidade-campo-mourao-pr': typeof ContabilidadeCampoMouraoPrRoute
   '/contabilidade-douradina-pr': typeof ContabilidadeDouradinaPrRoute
@@ -173,11 +198,13 @@ export interface FileRoutesById {
   '/contabilidade-itapema-sc': typeof ContabilidadeItapemaScRoute
   '/contabilidade-umuarama-pr': typeof ContabilidadeUmuaramaPrRoute
   '/contato': typeof ContatoRoute
+  '/obrigado': typeof ObrigadoRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/segmentos': typeof SegmentosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/conteudos/$slug': typeof ConteudosSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/conteudos/': typeof ConteudosIndexRoute
@@ -187,6 +214,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/404'
     | '/areas-de-atendimento'
     | '/contabilidade-campo-mourao-pr'
     | '/contabilidade-douradina-pr'
@@ -195,11 +223,13 @@ export interface FileRouteTypes {
     | '/contabilidade-itapema-sc'
     | '/contabilidade-umuarama-pr'
     | '/contato'
+    | '/obrigado'
     | '/politica-de-privacidade'
     | '/robots.txt'
     | '/segmentos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/termos-de-uso'
     | '/conteudos/$slug'
     | '/solucoes/$slug'
     | '/conteudos/'
@@ -207,6 +237,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/404'
     | '/areas-de-atendimento'
     | '/contabilidade-campo-mourao-pr'
     | '/contabilidade-douradina-pr'
@@ -215,11 +246,13 @@ export interface FileRouteTypes {
     | '/contabilidade-itapema-sc'
     | '/contabilidade-umuarama-pr'
     | '/contato'
+    | '/obrigado'
     | '/politica-de-privacidade'
     | '/robots.txt'
     | '/segmentos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/termos-de-uso'
     | '/conteudos/$slug'
     | '/solucoes/$slug'
     | '/conteudos'
@@ -227,6 +260,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/404'
     | '/areas-de-atendimento'
     | '/contabilidade-campo-mourao-pr'
     | '/contabilidade-douradina-pr'
@@ -235,11 +269,13 @@ export interface FileRouteTypes {
     | '/contabilidade-itapema-sc'
     | '/contabilidade-umuarama-pr'
     | '/contato'
+    | '/obrigado'
     | '/politica-de-privacidade'
     | '/robots.txt'
     | '/segmentos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/termos-de-uso'
     | '/conteudos/$slug'
     | '/solucoes/$slug'
     | '/conteudos/'
@@ -248,6 +284,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R404Route: typeof R404Route
   AreasDeAtendimentoRoute: typeof AreasDeAtendimentoRoute
   ContabilidadeCampoMouraoPrRoute: typeof ContabilidadeCampoMouraoPrRoute
   ContabilidadeDouradinaPrRoute: typeof ContabilidadeDouradinaPrRoute
@@ -256,11 +293,13 @@ export interface RootRouteChildren {
   ContabilidadeItapemaScRoute: typeof ContabilidadeItapemaScRoute
   ContabilidadeUmuaramaPrRoute: typeof ContabilidadeUmuaramaPrRoute
   ContatoRoute: typeof ContatoRoute
+  ObrigadoRoute: typeof ObrigadoRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SegmentosRoute: typeof SegmentosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
   ConteudosSlugRoute: typeof ConteudosSlugRoute
   SolucoesSlugRoute: typeof SolucoesSlugRoute
   ConteudosIndexRoute: typeof ConteudosIndexRoute
@@ -274,6 +313,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/404': {
+      id: '/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof R404RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas-de-atendimento': {
@@ -332,6 +378,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/obrigado': {
+      id: '/obrigado'
+      path: '/obrigado'
+      fullPath: '/obrigado'
+      preLoaderRoute: typeof ObrigadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-de-privacidade': {
       id: '/politica-de-privacidade'
       path: '/politica-de-privacidade'
@@ -367,6 +420,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/conteudos/': {
       id: '/conteudos/'
       path: '/conteudos'
@@ -400,6 +460,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R404Route: R404Route,
   AreasDeAtendimentoRoute: AreasDeAtendimentoRoute,
   ContabilidadeCampoMouraoPrRoute: ContabilidadeCampoMouraoPrRoute,
   ContabilidadeDouradinaPrRoute: ContabilidadeDouradinaPrRoute,
@@ -408,11 +469,13 @@ const rootRouteChildren: RootRouteChildren = {
   ContabilidadeItapemaScRoute: ContabilidadeItapemaScRoute,
   ContabilidadeUmuaramaPrRoute: ContabilidadeUmuaramaPrRoute,
   ContatoRoute: ContatoRoute,
+  ObrigadoRoute: ObrigadoRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SegmentosRoute: SegmentosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
   ConteudosSlugRoute: ConteudosSlugRoute,
   SolucoesSlugRoute: SolucoesSlugRoute,
   ConteudosIndexRoute: ConteudosIndexRoute,
