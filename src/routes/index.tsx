@@ -4,7 +4,6 @@ import { CarouselRow } from "@/components/ui/carousel-row";
 import { BAMark } from "@/components/brand/Logo";
 import { ContactFacts, FinalCta, SolutionsGrid, StepsSection } from "@/components/sections/common";
 import { Faq } from "@/components/sections/Faq";
-import { CasesSection } from "@/components/sections/CasesSection";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { InstagramSection } from "@/components/sections/InstagramSection";
 import { articles, cities, faq, segments, site, whatsappLink } from "@/lib/site";
@@ -258,8 +257,6 @@ function Home() {
         </Container>
       </Section>
 
-      {/* Avaliações reais & Cases */}
-      <CasesSection />
 
       {/* FAQ */}
       <Section>

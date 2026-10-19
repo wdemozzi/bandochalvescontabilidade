@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { PageHero, FinalCta, StepsSection, ContactFacts } from "@/components/sections/common";
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
-import { CasesSection } from "@/components/sections/CasesSection";
 import { BAMark } from "@/components/brand/Logo";
 import { site } from "@/lib/site";
 import { meta } from "@/lib/seo";
@@ -142,8 +141,6 @@ function Sobre() {
           </div>
         </Container>
       </Section>
-
-      <CasesSection />
 
       <FinalCta />
     </>
